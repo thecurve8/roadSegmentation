@@ -3,3 +3,6 @@ training/
 models/
 mass_roads/
 __pycache__/
+test.py
+dataLoader.py
+other_models.py
