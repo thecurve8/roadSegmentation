@@ -41,7 +41,13 @@ def generate(foldername, BatchSize, threshold=200):
     while True:
         images=[]
         labels=[]
-        for filename in os.listdir(images_filename):
+        #shuffling files
+        files = os.listdir(images_filename)
+        files = np.array(files)
+        randIndx = np.arange(len(files))
+        np.random.shuffle(randIndx)
+        shuffledFiles = files[randIndx]
+        for filename in shuffledFiles:
             filepath_image = os.path.join(images_filename, filename)
             im = Image.open(filepath_image)
             im = np.array(im)

@@ -7,6 +7,7 @@ Created on Mon Mar 23 17:39:18 2020
 from dataGenerator import generate
 import os
 import numpy as np
+from settings import TRAIN_FOLDER
 # up_folder = "mass_roads"
 # train_folder =os.path.join(up_folder, "valid")
 # TRAIN_SIZE=200
@@ -23,3 +24,12 @@ import numpy as np
 #         for j in range(400):
 #             if y[b,i,j]>0 and y[b,i,j]<255:
 #                 print(y[b,i,j])
+# labels_filename = os.path.join(TRAIN_FOLDER, "map")
+# files = os.listdir(labels_filename)
+# files = np.array(files)
+# randIndx = np.arange(len(files))
+# np.random.shuffle(randIndx)
+# # print(randIndx)
+# shuffledFiles = files[randIndx]
+# for filename in shuffledFiles:
+#     print(filename)

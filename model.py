@@ -234,7 +234,7 @@ def train_deep_UNet(epochs_to_run=30, model_name="trainedModel_deep"):
     TRAIN_SIZE=200
     VALIDATION_SIZE=14
     BS_TRAIN = 20
-    TRAIN_STEPS_PER_EPOCH = TRAIN_SIZE/BS_TRAIN
+    TRAIN_STEPS_PER_EPOCH = TRAIN_SIZE//BS_TRAIN
     
     train_gen = generate(TRAIN_FOLDER, BS_TRAIN)
     val_gen = generate(VALIDATION_FOLDER, VALIDATION_SIZE)
@@ -334,4 +334,4 @@ def test_model(model_name="trainedModel_deep"):
     return np.squeeze(prediction, axis=-1)
     
 if __name__ =="__main__":
-    test_model()
+    train_deep_UNet(epochs_to_run=1)
